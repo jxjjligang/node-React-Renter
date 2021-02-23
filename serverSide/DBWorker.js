@@ -14,12 +14,6 @@ mongoose.connect(
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-const dbConn = mongoose.connection;
-dbConn.on("error", console.error.bind(console, "connection error:"));
-dbConn.once("open", function () {
-    console.log("MongoDB open evemt.");
-});
-
 const Insurance = mongoose.model("RenterInsurance", insuranceSchema);
 class DBWorker {
     async getItems(callback) {

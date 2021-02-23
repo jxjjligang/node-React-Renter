@@ -10,15 +10,10 @@ app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, "public", "index.html"));
-// });
 
 let dbw = new DBWorker();
-let items = [];
 app.get('/insurance', (req, res) => {
-    items = dbw.getItems((items) => res.send(JSON.stringify(items)));
-    console.log('get insurances', items);
+    dbw.getItems((items) => res.send(JSON.stringify(items)));
 })
 
 app.post('/insurance', async (req, res) => {
@@ -38,10 +33,10 @@ app.delete('/insurance/item/:itemId', async (req, res) => {
     dbw.deleteItem(req.params.itemId);
 
     let items = await dbw.getItems();
-    res.send(JSON.stringify(items));    
+    res.send(JSON.stringify(items));
 });
 
 // start express server on port 3000
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("server started on port 3000");
 });
