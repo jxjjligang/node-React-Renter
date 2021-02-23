@@ -2,11 +2,11 @@ const express = require("express");
 let bodyParser = require('body-parser');
 const app = express(); // create express app
 const path = require("path");
-const DBWorker = require("./DBWorker");
+const DBWorker = require("./serverSide/DBWorker");
 
 // add middleware
 console.log(`__dirname:${__dirname}`);
-app.use(express.static(path.join(__dirname, "..", "build")));
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
