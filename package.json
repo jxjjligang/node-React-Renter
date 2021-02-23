@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "start": "yarn run build && (cd serverSide && nodemon server.js)",
+    "start": "yarn run build && (cd serverSide && node server.js)",
     "build": "react-scripts build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
