@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c912f52a-4a29-4a0a-b1f9-8436424f95c9/resourceGroups/rent-NodeJS-ResourceGroup/providers/Microsoft.Web/sites/rent-NodeJS",
+    "appService.deploySubpath": "."
+}

@@ -19,6 +19,7 @@ class DBWorker {
     async getItems(callback) {
         try {
             const allInsurances = await Insurance.find({});
+            allInsurances.sort((item1, item2) => item1.renterName < item2.renterName ? -1 : 1);
             // console.log(allInsurances);
             if (callback)
                 callback(allInsurances);
