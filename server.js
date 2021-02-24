@@ -2,6 +2,7 @@ const express = require("express");
 let bodyParser = require('body-parser');
 const app = express(); // create express app
 const path = require("path");
+const http = require("http").Server(app);;
 const DBWorker = require("./serverSide/DBWorker");
 
 // add middleware
