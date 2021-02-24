@@ -38,7 +38,8 @@ class DBWorker {
                 await newItem.save();
             }
             else {
-                await eixsting.update(item);
+                console.log('update', item);
+                await eixsting.updateOne(item);
             }
 
             const allInsurances = await Insurance.find({});

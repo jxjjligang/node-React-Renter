@@ -70,7 +70,7 @@ const EditableCell = (cellObj) => {
 
   let columnHeader = cellObj.column.Header;
   if (columnHeader !== "Delete") {
-    let notSupported = ["Category"];
+    let notSupported = [];
     if (notSupported.includes(columnHeader)) {
       return <div>{value}</div>;
     } else {
@@ -264,7 +264,7 @@ function EditableTable() {
     setSkipPageReset(true);
 
     let modifiedObj = data.find((obj) => obj._id === objectId);
-    if (!modifiedObj || !columnId || !columnId.id || !modifiedObj[columnId.id])
+    if (!modifiedObj || !columnId || !columnId.id)  // || !modifiedObj[columnId.id]
       return;
     if (modifiedObj[columnId.id] === value) return;
 
@@ -280,7 +280,7 @@ function EditableTable() {
     actOnData("DELETE", `insurance/item/${idPara}`).then((data) => {
       //console.log(data); // JSON data parsed by `data.json()` call
       setData(formatData(data));
-    });    
+    });
   };
 
   // After data chagnes, we turn the flag back off
