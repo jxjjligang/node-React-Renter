@@ -66,7 +66,8 @@ function getYearMonthDay(dateObj) {
 
 
 // start express server on port 3000
-http.listen(process.env.PORT || 3000, () => {
-    console.log("server started on port 3000");
+http.listen(process.env.PORT || 3000, (req, res) => {
+    //res.send('Here is the home page.');
+    console.log(req, res);
 });
 
