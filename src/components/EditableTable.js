@@ -238,17 +238,6 @@ function EditableTable() {
     ],
     []
   );
-  // const makeData = (num) => {
-  //   return [
-  //     { id: 1, name: "Harry Potter", age: 20 },
-  //     { id: 2, name: "Hermione Granger", age: 20 },
-  //     { id: 3, name: "Ron Weasley", age: 20 },
-  //     { id: 4, name: "You know who", age: 150 },
-  //     { id: 5, name: "Professor Dumbledore", age: 170 },
-  //     { id: 6, name: "Professor Snape", age: 60 },
-  //     { id: 7, name: "Rubeus Hagrid", age: 50 },
-  //   ];
-  // };
 
   const [data, setData] = React.useState([]);
   const [skipPageReset, setSkipPageReset] = React.useState(false);
@@ -351,3 +340,15 @@ async function actOnData(method = "POST", url = "", data = {}) {
 }
 
 export default EditableTable;
+  // potential renter infos: 
+  // const makeData = (num) => {
+  //   return [
+  //     { id: 1, name: "Harry Potter", age: 20 },
+  //     { id: 2, name: "Hermione Granger", age: 20 },
+  //     { id: 3, name: "Ron Weasley", age: 20 },
+  //     { id: 4, name: "You know who", age: 150 },
+  //     { id: 5, name: "Professor Dumbledore", age: 170 },
+  //     { id: 6, name: "Professor Snape", age: 60 },
+  //     { id: 7, name: "Rubeus Hagrid", age: 50 },
+  //   ];
+  // };

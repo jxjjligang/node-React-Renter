@@ -43,10 +43,7 @@ class DBWorker {
                 await eixsting.updateOne(item);
             }
 
-            const allInsurances = await Insurance.find({});
-            // console.log(allInsurances);
-            return callback(allInsurances);
-
+            this.getItems(callback);
         } catch (error) {
             console.log(error);
         }
